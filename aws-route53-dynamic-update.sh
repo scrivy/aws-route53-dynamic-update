@@ -9,7 +9,7 @@ set -e
 DATA_DIR="/tmp"
 TTL=${TTL:-60}
 TYPE=${TYPE:-"A"}
-IP=${IP:-$(wget -qO- http://ifconfig.me/ip)}
+IP=${IP:-$(curl --ipv4 --no-progress-meter http://ifconfig.me/ip)}
 DNS_SERVER=${DNS_SERVER:-8.8.8.8}
 
 [ -z "$IP" ] && echo IP cant be retrieved && exit 1
