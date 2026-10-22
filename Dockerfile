@@ -1,5 +1,5 @@
 FROM docker.io/library/alpine:3.24
-RUN apk add -U aws-cli bash bind-tools curl
+RUN apk add -U aws-cli bash bind-tools curl ca-certificates
 RUN adduser -S aws -s /bin/ash -h /aws
 ADD ./aws-route53-dynamic-update.sh /usr/local/bin/aws-route53-dynamic-update.sh
 USER aws
