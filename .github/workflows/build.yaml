@@ -1,12 +1,6 @@
 name: Build
-
-# Controls when the workflow will run
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - 'v*.*.*'
-# permissions are needed if pushing to ghcr.io
 permissions: 
   packages: write
 
@@ -37,12 +31,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
+            type=raw,value=latest
             type=sha
       - name: Build and push
         uses: docker/build-push-action@v7
