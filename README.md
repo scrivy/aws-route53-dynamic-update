@@ -19,7 +19,7 @@ It can also admit the following environment variables:
 * **DNS_SERVER**: which DNS server use to get current DNS respose to RECORDSET.
   Defaults to 8.8.8.8
 * **TTL**: TTL of recordset. Defaults to 60 seconds
-* **TYPE**: which DNS record tu update. Defaults to A record
+* **TYPE**: which DNS record to update. Defaults to A record
 
 
 ## Example usage with kubernetes
