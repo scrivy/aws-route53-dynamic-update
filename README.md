@@ -9,7 +9,7 @@ docker run \
   -e AWS_SECRET_ACCESS_KEY=YYYY \
   -e ZONEID=ZZZZZ \
   -e RECORDSET=some-name.example.com \
-  --rm -it ghcr.io/scrivy/aws-route53-dynamic-update:main
+  --rm -it ghcr.io/scrivy/aws-route53-dynamic-update:latest
 ```
 
 It can also admit the following environment variables:
@@ -57,7 +57,7 @@ spec:
           restartPolicy: Never #This allow to inspect possible POD errors
           containers:
           - name: dns-update
-            image: scrivy/aws-route53-dynamic-update:main
+            image: scrivy/aws-route53-dynamic-update:latest
             imagePullPolicy: Always
             env:
             - name: AWS_ACCESS_KEY_ID
